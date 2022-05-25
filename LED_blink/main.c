@@ -1,5 +1,5 @@
 /*
- * LED blink at specific freacuancy
+ * LED blink at specific frequency
  *
  * 
  * 

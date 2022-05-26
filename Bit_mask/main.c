@@ -1,5 +1,5 @@
 /*
- * This program test every bit of DDRD register
+ * This program tests every bit of DDRD register
  * and prints its state
  * 
  * 

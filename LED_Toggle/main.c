@@ -7,7 +7,7 @@
 #define F_CPU 16000000UL  // run our crystal at 16 MHz
 #include <avr/io.h>
  
-#define LED PB0 // connect an LED to PINB0 (pin 7 on an Arduino board)
+#define LED PB0 // connect an LED to PINB0 (pin 8 on an Arduino board)
 #define Btn PD3 // connect a button to PIND3  (pin 3 on an Arduino board)
 //add some macros for readability 
 #define LED_on PORTB |= (1<<LED);  //set led bit to PORTB

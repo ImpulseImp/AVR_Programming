@@ -32,7 +32,7 @@
 int main(void)
 {
 	DDRB |= (1<<LED_interrupt); // set PB0 as output
-    DDRB &= ~(1<<Btn); // not necessarily but make sure this bit is set as an output
+        DDRB &= ~(1<<Btn); // not necessarily but make sure this bit is set as an output
 	PORTB |=(1<<Btn); // turn on an internal pull-up resistor
 	PCMSK0 |=(1<<PCINT1); //we set this bit to PCMSK0 due to the datasheet (PB1 is PCINT1)
 	PCICR |=(1<<PCIE0); // there is 3 Pin-change interrupts (PCIE0 for PB0 .. PB7, PCIE1 for PC0 .. PC6, PCIE2 for PD0 .. PD7)

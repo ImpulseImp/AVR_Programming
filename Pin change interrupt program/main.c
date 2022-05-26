@@ -37,7 +37,7 @@ int main(void)
 	PCMSK0 |=(1<<PCINT1); //we set this bit to PCMSK0 due to the datasheet (PB1 is PCINT1)
 	PCICR |=(1<<PCIE0); // there is 3 Pin-change interrupts (PCIE0 for PB0 .. PB7, PCIE1 for PC0 .. PC6, PCIE2 for PD0 .. PD7)
 	DDRD |= (1<<LED_delay);// set this bit as an output
-	sei();
+	sei(); // set interrupt enable bit 
 	
     while (1) 
     {

@@ -16,7 +16,7 @@
 #define LED_on PORTB |= (1<<LED_interrupt);  //set led bit to PORTB
 #define LED_off PORTB &= ~(1<<LED_interrupt); //clear led bit from PORTB
 
-  ISR (PCINT0_vect) //interrupt service routine
+  ISR (PCINT0_vect) //interrupt service routine. It trigers every time when you press the button
 {
 	if (bit_is_clear(PINB,Btn)) //if button is pressed LED on
 	{

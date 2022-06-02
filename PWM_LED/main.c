@@ -34,7 +34,7 @@ int main(void)
 	/* Set the baudrate to 9600 bps using 16MHz internal RC oscillator */
 	DDRB |= (1<<LED); //set led pin as an output
 	PWM_LED(800, 50); //duty cycle
-	sei();
+	sei(); //global interrupt enable
 	
 	while (1)
 	{

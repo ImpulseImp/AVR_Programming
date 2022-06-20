@@ -15,19 +15,19 @@
 
 int main(void)
 {
-	DDRB |= (1<<LED); // set PB0 as output
-    DDRD &= ~(1<<Btn); // not necessarily but make sure this bit is set as an output
-	PORTD |=(1<<Btn); // turn on an internal pull-up resistor
+   DDRB |= (1<<LED); // set PB0 as output
+   DDRD &= ~(1<<Btn); // not necessarily but make sure this bit is set as an output
+   PORTD |=(1<<Btn); // turn on an internal pull-up resistor
     while (1) 
     {
-		if (bit_is_clear(PIND,Btn)) //if button is pressed LED on
-		{
-			LED_on;
-		} 
-		else  // button isn't plessed LED off 
-		{
-			LED_off;
-		} 
+	if (bit_is_clear(PIND,Btn)) //if button is pressed LED on
+	{
+	LED_on;
+	} 
+	else  // button isn't plessed LED off 
+	{
+	LED_off;
+	} 
     }
 }
 

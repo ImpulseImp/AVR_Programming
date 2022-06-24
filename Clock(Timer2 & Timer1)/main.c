@@ -9,7 +9,8 @@
 #define btn_start PD7
 #define btn_stop PD6
 #include "UART.h"
-#define tick 15625
+#define tick1 15625
+#define tick2 250
 int sec=0;
 int msec=0;
 int countsec=0;
@@ -19,7 +20,7 @@ int min;
     {
 	    TCCR2A |= (1<<WGM21); //Set CTC mode
 	    TCCR2B |= (1<<CS22); //64 prescaler
-	    OCR2A=250; // 1ms tick
+	    OCR2A   =  tick2; // 1ms tick
 	    TIMSK2 |= (1<<OCIE2A); //Set the interrupt request		
     }
 	
@@ -45,7 +46,7 @@ int min;
 		TCCR1B |= (1<<CS12) | (1<<CS10); // set presceler to 1024
 		TIMSK1 |= (1<<OCIE1A);  //Overflow Interrupt Enable
 		TCNT1 = 0;
-		OCR1A = tick; //1 sec
+		OCR1A = tick1; //1 sec
 		sei();
 	}
 	
@@ -64,8 +65,7 @@ int main(void)
 
     while (1) 
     {
-    printf("Time is:%dmin %dsec %dms",min,countsec, msec);
-  	printf("      Time is:%d\n",sec);
+printf("Timer2: %d min %d sec %d ms  Timer1: %d\n",min,countsec, msec, sec);
     }
 }
 

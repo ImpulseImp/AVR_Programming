@@ -8,7 +8,7 @@
 #include <avr/io.h>
 #include <util/delay.h>   
 #define LED PB0 // connect an LED to PINB0 (pin 8 on an Arduino board) 
-#define freacuancy 250 //2 Hz by default (1000=1sec)
+#define frequancy 250 //2 Hz by default (1000=1sec)
 #define LED_on PORTB |= (1<<LED);  //set led bit to PORTB
 #define LED_off PORTB &= ~(1<<LED); //clear led bit from PORTB
 
@@ -19,9 +19,9 @@ int main(void)
     while (1) 
     {
 		LED_on
-		_delay_ms(freacuancy);
+		_delay_ms(frequancy);
 		LED_off;
-		_delay_ms(freacuancy);
+		_delay_ms(frequancy);
     }
 }
 
